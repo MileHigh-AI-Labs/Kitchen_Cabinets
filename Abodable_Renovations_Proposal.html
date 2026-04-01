@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abodable Renovations — Kitchen Cabinet Proposal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:       #FEFAF4;
+      --cream-deep:  #F5EDD8;
+      --gold:        #C8973F;
+      --gold-light:  #E8C47A;
+      --gold-dark:   #9E7230;
+      --brown-dark:  #2C1810;
+      --brown-mid:   #5C3A22;
+      --brown-light: #A07850;
+      --white:       #FFFFFF;
+      --shadow:      rgba(44,24,16,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--brown-dark);
+      line-height: 1.7;
+    }
+
+    /* ─── HEADER ─────────────────────────────────── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(254,250,244,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--cream-deep);
+      padding: 0 48px;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .logo-area { display: flex; flex-direction: column; }
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--brown-dark); letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .logo-tagline {
+      font-size: 10px; font-weight: 300; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      margin-top: 3px;
+    }
+    nav { display: flex; gap: 32px; }
+    nav a {
+      text-decoration: none; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--brown-mid); transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+    .header-cta {
+      background: var(--gold); color: var(--white);
+      border: none; padding: 10px 24px; font-family: 'Lato', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+    }
+    .header-cta:hover { background: var(--gold-dark); }
+
+    /* ─── HERO ────────────────────────────────────── */
+    .hero {
+      position: relative; height: 100vh; min-height: 600px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; margin-top: 72px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('hero image.png') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(44,24,16,0.72) 0%, rgba(92,58,34,0.45) 60%, rgba(200,151,63,0.15) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; padding: 0 24px; max-width: 860px;
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold-light);
+      margin-bottom: 20px; display: block;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 700; color: var(--white);
+      line-height: 1.15; margin-bottom: 24px;
+    }
+    .hero-title em { color: var(--gold-light); font-style: italic; }
+    .hero-sub {
+      font-size: 17px; font-weight: 300;
+      color: rgba(255,255,255,0.88);
+      max-width: 580px; margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+    .hero-btn {
+      display: inline-block; background: var(--gold);
+      color: var(--white); padding: 16px 44px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
+      font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .hero-btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%;
+      transform: translateX(-50%); z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.55); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .scroll-arrow {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5));
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+
+    /* ─── SECTION WRAPPER ─────────────────────────── */
+    section { padding: 96px 48px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 14px; display: block;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 700; color: var(--brown-dark);
+      line-height: 1.2; margin-bottom: 20px;
+    }
+    .divider {
+      width: 56px; height: 3px;
+      background: var(--gold); margin-bottom: 28px;
+    }
+    p { color: var(--brown-mid); font-size: 16px; line-height: 1.8; }
+
+    /* ─── INTRO / PARTNERSHIP ─────────────────────── */
+    .intro-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center; margin-top: 56px;
+    }
+    .intro-image {
+      border-radius: 2px; overflow: hidden;
+      box-shadow: 8px 8px 0 var(--gold-light);
+    }
+    .intro-image img { width: 100%; display: block; }
+
+    .partner-band {
+      background: var(--brown-dark); padding: 64px 48px;
+    }
+    .partner-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 64px;
+    }
+    .partner-text { flex: 1; }
+    .partner-text .eyebrow { color: var(--gold-light); }
+    .partner-text h2 { color: var(--white); }
+    .partner-text p { color: rgba(255,255,255,0.72); }
+    .partner-badge {
+      flex-shrink: 0; text-align: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,151,63,0.4);
+      padding: 36px 44px;
+    }
+    .partner-badge-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--gold-light); letter-spacing: 0.04em;
+    }
+    .partner-badge-sub {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+    }
+    .partner-badge-url {
+      display: block; margin-top: 14px; font-size: 12px;
+      color: var(--gold-light); text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .partner-badge-url:hover { text-decoration: underline; }
+
+    /* ─── SERVICES ────────────────────────────────── */
+    .services-bg { background: var(--cream-deep); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 32px; margin-top: 56px;
+    }
+    .service-card {
+      background: var(--white); padding: 40px 32px;
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 4px 24px var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px var(--shadow);
+    }
+    .service-icon {
+      display: block; margin-bottom: 20px; width: 72px; height: 72px;
+    }
+    .service-icon svg {
+      width: 72px; height: 72px;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--brown-dark);
+      margin-bottom: 12px; font-weight: 600;
+    }
+    .service-card p { font-size: 14px; line-height: 1.7; }
+
+    /* ─── HOW IT WORKS ────────────────────────────── */
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 32px; margin-top: 64px; position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute; top: 28px; left: 12%; right: 12%; height: 2px;
+      background: linear-gradient(to right, var(--gold-light), var(--gold), var(--gold-light));
+      z-index: 0;
+    }
+    .step {
+      text-align: center; position: relative; z-index: 1; padding: 0 8px;
+    }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--gold); color: var(--white);
+      font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 16px rgba(200,151,63,0.4);
+    }
+    .step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; font-weight: 600;
+      color: var(--brown-dark); margin-bottom: 10px;
+    }
+    .step p { font-size: 13px; line-height: 1.7; }
+
+    /* ─── GALLERY ─────────────────────────────────── */
+    .gallery-bg { background: var(--brown-dark); }
+    .gallery-bg .eyebrow { color: var(--gold-light); }
+    .gallery-bg h2 { color: var(--white); }
+    .gallery-bg .divider { background: var(--gold-light); }
+    .gallery-bg > .section-inner > p { color: rgba(255,255,255,0.65); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px; margin-top: 48px;
+    }
+    .gallery-pair {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,151,63,0.2);
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .gallery-pair:hover { border-color: var(--gold); }
+
+    /* ── BEFORE/AFTER SLIDER ── */
+    .pair-images {
+      position: relative; aspect-ratio: 4/3; overflow: hidden;
+      cursor: ew-resize; user-select: none; -webkit-user-select: none;
+    }
+    .pair-images img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      pointer-events: none; display: block;
+    }
+    .pair-images .img-before {
+      clip-path: inset(0 50% 0 0);
+      z-index: 2;
+    }
+    .pair-images .img-after { z-index: 1; }
+
+    /* Divider line */
+    .slider-divider {
+      position: absolute; top: 0; bottom: 0;
+      left: 50%; transform: translateX(-50%);
+      width: 3px; background: var(--white);
+      z-index: 10; pointer-events: none;
+      box-shadow: 0 0 8px rgba(0,0,0,0.45);
+    }
+    /* Drag handle circle */
+    .slider-handle {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--white);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+      display: flex; align-items: center; justify-content: center;
+      cursor: ew-resize; pointer-events: none;
+      border: 3px solid var(--gold);
+    }
+    .slider-arrows {
+      display: flex; align-items: center; gap: 3px;
+      color: var(--gold); font-size: 13px; font-weight: 900;
+    }
+    /* BEFORE / AFTER labels floating on image */
+    .slider-label {
+      position: absolute; top: 10px; z-index: 5;
+      font-family: 'Lato', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; padding: 4px 10px;
+      pointer-events: none;
+    }
+    .slider-label.before {
+      left: 10px; background: rgba(44,24,16,0.72); color: rgba(255,255,255,0.75);
+    }
+    .slider-label.after {
+      right: 10px; background: var(--gold); color: var(--white);
+    }
+
+    .pair-info {
+      padding: 16px 20px;
+      border-top: 1px solid rgba(200,151,63,0.15);
+    }
+    .pair-info .pair-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; color: var(--white); margin-bottom: 4px; font-weight: 600;
+    }
+    .pair-info .pair-desc {
+      font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5;
+    }
+
+    /* ─── WHY CHOOSE US ───────────────────────────── */
+    .benefits-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 28px; margin-top: 56px;
+    }
+    .benefit {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 28px; background: var(--white);
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 2px 16px var(--shadow);
+    }
+    .benefit-icon {
+      flex-shrink: 0; margin-top: 2px; width: 52px; height: 52px;
+    }
+    .benefit-icon svg {
+      width: 52px; height: 52px;
+    }
+    .benefit-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; color: var(--brown-dark);
+      margin-bottom: 8px; font-weight: 600;
+    }
+    .benefit-text p { font-size: 14px; line-height: 1.7; }
+
+    /* ─── CTA ─────────────────────────────────────── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-mid) 100%);
+      padding: 96px 48px; text-align: center;
+    }
+    .cta-band .eyebrow { color: var(--gold-light); }
+    .cta-band h2 { color: var(--white); margin-bottom: 16px; }
+    .cta-band p { color: rgba(255,255,255,0.7); max-width: 540px; margin: 0 auto 40px; }
+    .cta-contacts {
+      display: flex; justify-content: center; gap: 48px;
+      flex-wrap: wrap; margin-bottom: 48px;
+    }
+    .cta-contact { text-align: center; }
+    .cta-contact-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+    .cta-contact-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; color: var(--white);
+    }
+    .cta-btn {
+      display: inline-block; background: var(--gold);
+      color: var(--white); padding: 18px 56px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
+      font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+    /* ─── FOOTER ──────────────────────────────────── */
+    footer {
+      background: #1a0e09; padding: 40px 48px;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; color: var(--white); font-weight: 700;
+    }
+    .footer-copy {
+      font-size: 12px; color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+    }
+    .footer-partner {
+      font-size: 11px; color: rgba(255,255,255,0.35); text-align: right;
+    }
+    .footer-partner a { color: var(--gold-light); text-decoration: none; }
+    .footer-partner a:hover { text-decoration: underline; }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 900px) {
+      section { padding: 72px 28px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid::before { display: none; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .partner-inner { flex-direction: column; gap: 40px; }
+      nav { display: none; }
+      header { padding: 0 24px; }
+    }
+    @media (max-width: 600px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-partner { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- DOWNLOAD BAR -->
+<div id="download-bar" style="
+  position:fixed; bottom:0; left:0; right:0; z-index:200;
+  background:linear-gradient(90deg,#2C1810 0%,#3D2214 100%);
+  border-top:2px solid #C8973F;
+  display:flex; align-items:center; justify-content:center;
+  gap:16px; padding:12px 24px;
+  box-shadow:0 -4px 24px rgba(44,24,16,0.35);
+">
+  <span style="font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#E8C47A;margin-right:8px;">Download Proposal:</span>
+  <a href="Abodable_Renovations_Proposal.docx" download style="
+    display:flex;align-items:center;gap:8px;
+    background:#C8973F;color:#fff;
+    padding:9px 20px;font-family:'Lato',sans-serif;
+    font-size:12px;font-weight:700;letter-spacing:0.08em;
+    text-transform:uppercase;text-decoration:none;
+    transition:background 0.2s;
+  " onmouseover="this.style.background='#9E7230'" onmouseout="this.style.background='#C8973F'">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Word Doc (.docx)
+  </a>
+  <a href="Abodable_Renovations_Proposal.pptx" download style="
+    display:flex;align-items:center;gap:8px;
+    background:#C8973F;color:#fff;
+    padding:9px 20px;font-family:'Lato',sans-serif;
+    font-size:12px;font-weight:700;letter-spacing:0.08em;
+    text-transform:uppercase;text-decoration:none;
+    transition:background 0.2s;
+  " onmouseover="this.style.background='#9E7230'" onmouseout="this.style.background='#C8973F'">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    PowerPoint (.pptx)
+  </a>
+  <a href="Abodable_Renovations_Proposal.html" download style="
+    display:flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,0.08);color:#E8C47A;
+    border:1px solid #C8973F;
+    padding:9px 20px;font-family:'Lato',sans-serif;
+    font-size:12px;font-weight:700;letter-spacing:0.08em;
+    text-transform:uppercase;text-decoration:none;
+    transition:background 0.2s;
+  " onmouseover="this.style.background='rgba(200,151,63,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    HTML Page
+  </a>
+  <button onclick="document.getElementById('download-bar').style.display='none'" style="
+    background:none;border:none;color:rgba(255,255,255,0.35);
+    font-size:18px;cursor:pointer;margin-left:8px;line-height:1;padding:4px;
+  " title="Dismiss">✕</button>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-area">
+    <span class="logo-name">Abodable Renovations</span>
+    <span class="logo-tagline">Kitchen Cabinet Specialists</span>
+  </div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="header-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Abodable Renovations · Powered by Mile High AI Labs</span>
+    <h1 class="hero-title">
+      Imagine Your<br/><em>Dream Kitchen</em><br/>Before We Build It
+    </h1>
+    <p class="hero-sub">
+      We bring your vision to life with AI-powered virtual design — see your new kitchen cabinets before a single nail is driven.
+    </p>
+    <a href="#gallery" class="hero-btn">Explore Transformations</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-arrow"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="about">
+  <div class="section-inner">
+    <span class="eyebrow">About Us</span>
+    <h2>Renovation You Can See<br/>Before It Happens</h2>
+    <div class="divider"></div>
+    <div class="intro-grid">
+      <div>
+        <p style="margin-bottom:20px;">
+          At <strong>Abodable Renovations</strong>, we believe every homeowner and real estate investor deserves the confidence of seeing their finished kitchen before the project begins. That's why we've partnered with <strong>Mile High AI Labs</strong> to bring AI-powered virtual design technology directly to your renovation process.
+        </p>
+        <p style="margin-bottom:20px;">
+          Our service starts with imagination — a high-fidelity visual rendering of your renovated kitchen cabinets in the style, finish, and hardware of your choice. Once you love what you see, we move forward with a detailed price estimation and a clear path to making it real.
+        </p>
+        <p>
+          Whether you're transforming your family home or maximizing ROI on an investment property, our process is designed to eliminate guesswork, save time, and deliver results that exceed expectations.
+        </p>
+      </div>
+      <div class="intro-image">
+        <img src="about us.png" alt="Modern renovated kitchen with white cabinets and blue island" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERSHIP BAND -->
+<div class="partner-band">
+  <div class="partner-inner">
+    <div class="partner-text">
+      <span class="eyebrow">Technology Partnership</span>
+      <h2>Visualization Powered<br/>by Artificial Intelligence</h2>
+      <div class="divider" style="background:var(--gold-light);"></div>
+      <p>
+        Mile High AI Labs is a cutting-edge virtual design studio that transforms property renovation concepts into photorealistic renders. Their AI-driven platform allows us to show you multiple cabinet styles, finishes, handle options, and materials — all mapped onto images of your actual kitchen — before any physical work begins. This means fewer surprises, smarter decisions, and a renovation that's truly yours.
+      </p>
+    </div>
+    <div class="partner-badge">
+      <div class="partner-badge-name">Mile High AI Labs</div>
+      <div class="partner-badge-sub">Virtual Design Partner</div>
+      <a href="https://www.milehighlabs.ai/" target="_blank" class="partner-badge-url">milehighlabs.ai ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <span class="eyebrow">What We Offer</span>
+    <h2>Our Services</h2>
+    <div class="divider"></div>
+    <p style="max-width:620px;">
+      From first concept to final installation, Abodable Renovations guides you through a seamless, technology-enhanced renovation journey.
+    </p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- 3D cube top face -->
+            <polygon points="40,10 64,23 40,36 16,23" />
+            <!-- right face -->
+            <polygon points="64,23 64,51 40,64 40,36" />
+            <!-- left face -->
+            <polygon points="16,23 40,36 40,64 16,51" />
+            <!-- sparkle top-left: cross -->
+            <line x1="7" y1="9" x2="7" y2="17" stroke="#C8973F" stroke-width="2.2"/>
+            <line x1="3" y1="13" x2="11" y2="13" stroke="#C8973F" stroke-width="2.2"/>
+            <!-- sparkle top-right: dot burst -->
+            <circle cx="71" cy="10" r="2.5" fill="#C8973F" stroke="none"/>
+            <line x1="71" y1="4" x2="71" y2="7" stroke="#C8973F" stroke-width="1.6"/>
+            <line x1="65" y1="10" x2="68" y2="10" stroke="#C8973F" stroke-width="1.6"/>
+            <line x1="74" y1="10" x2="77" y2="10" stroke="#C8973F" stroke-width="1.6"/>
+            <line x1="71" y1="13" x2="71" y2="16" stroke="#C8973F" stroke-width="1.6"/>
+            <!-- sparkle bottom-right: small cross -->
+            <line x1="71" y1="61" x2="71" y2="67" stroke="#C8973F" stroke-width="2"/>
+            <line x1="68" y1="64" x2="74" y2="64" stroke="#C8973F" stroke-width="2"/>
+          </svg>
+        </span>
+        <h3>AI-Powered Virtual Design</h3>
+        <p>Using Mile High AI Labs technology, we render photorealistic visualizations of your kitchen with new cabinets in your chosen style, color, material, and hardware — before any work begins.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Blueprint paper with folded corner -->
+            <path d="M12,8 H60 L68,16 V72 H12 Z" fill="#F5EDD8" stroke="#2C1810"/>
+            <path d="M60,8 V16 H68" fill="none" stroke="#2C1810"/>
+            <!-- Floor plan grid lines -->
+            <line x1="20" y1="26" x2="60" y2="26"/>
+            <line x1="20" y1="44" x2="60" y2="44"/>
+            <line x1="20" y1="62" x2="60" y2="62"/>
+            <line x1="36" y1="17" x2="36" y2="62"/>
+            <!-- Room boxes -->
+            <rect x="20" y="17" width="16" height="9" stroke="#C8973F" stroke-width="1.4"/>
+            <rect x="37" y="26" width="23" height="18" stroke="#C8973F" stroke-width="1.4"/>
+            <!-- Compass instrument -->
+            <circle cx="30" cy="56" r="7" fill="white" stroke="#2C1810" stroke-width="1.6"/>
+            <line x1="30" y1="49" x2="30" y2="63" stroke="#C8973F" stroke-width="1.4"/>
+            <line x1="23" y1="56" x2="37" y2="56" stroke="#C8973F" stroke-width="1.4"/>
+            <circle cx="30" cy="56" r="2" fill="#C8973F" stroke="none"/>
+          </svg>
+        </span>
+        <h3>Style Consultation</h3>
+        <p>Our renovation specialists work with you to explore a curated selection of cabinet styles — from modern high-gloss to classic shaker — paired with a variety of knobs, handles, and premium materials.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Clipboard body -->
+            <rect x="14" y="14" width="46" height="58" rx="3" fill="#F5EDD8" stroke="#2C1810"/>
+            <!-- Clipboard clip at top -->
+            <rect x="27" y="9" width="20" height="10" rx="3" fill="white" stroke="#2C1810" stroke-width="1.6"/>
+            <!-- Dollar sign circle -->
+            <circle cx="34" cy="40" r="13" fill="white" stroke="#2C1810" stroke-width="1.6"/>
+            <text x="34" y="45" text-anchor="middle" font-size="16" fill="#C8973F" stroke="none" font-family="Georgia" font-weight="bold">$</text>
+            <!-- Checkmark badge bottom-right -->
+            <circle cx="52" cy="58" r="10" fill="#C8973F" stroke="none"/>
+            <polyline points="46,58 50,63 58,53" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Detailed Price Proposal</h3>
+        <p>Once your virtual design is approved, we provide a comprehensive, itemized price estimate covering materials, hardware, labor, and installation — with full transparency and no hidden costs.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Left mallet handle -->
+            <line x1="18" y1="52" x2="38" y2="32" stroke="#2C1810"/>
+            <!-- Left mallet head -->
+            <rect x="8" y="43" width="16" height="10" rx="2" transform="rotate(-45 16 48)" fill="#F5EDD8" stroke="#2C1810"/>
+            <!-- Right mallet handle -->
+            <line x1="62" y1="52" x2="42" y2="32" stroke="#2C1810"/>
+            <!-- Right mallet head -->
+            <rect x="56" y="43" width="16" height="10" rx="2" transform="rotate(45 64 48)" fill="#F5EDD8" stroke="#2C1810"/>
+            <!-- Cabinet body -->
+            <rect x="20" y="52" width="40" height="22" rx="2" fill="#F5EDD8" stroke="#2C1810"/>
+            <!-- Cabinet middle divider -->
+            <line x1="40" y1="52" x2="40" y2="74"/>
+            <!-- Cabinet knobs -->
+            <circle cx="33" cy="63" r="2.5" fill="#C8973F" stroke="none"/>
+            <circle cx="47" cy="63" r="2.5" fill="#C8973F" stroke="none"/>
+          </svg>
+        </span>
+        <h3>Cabinet Renovation & Installation</h3>
+        <p>Our skilled craftsmen handle every aspect of the physical renovation — from precision cabinet removal to expert installation — ensuring the finished result matches your approved design exactly.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Screw 1 (left, angled) -->
+            <line x1="18" y1="22" x2="42" y2="62" stroke="#2C1810" stroke-width="3"/>
+            <!-- Screw 1 head (hex shape approximated) -->
+            <circle cx="18" cy="22" r="8" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.6"/>
+            <line x1="13" y1="19" x2="23" y2="19" stroke="#2C1810" stroke-width="1.4"/>
+            <line x1="13" y1="25" x2="23" y2="25" stroke="#2C1810" stroke-width="1.4"/>
+            <!-- Screw 1 tip -->
+            <line x1="39" y1="57" x2="45" y2="67" stroke="#2C1810" stroke-width="2"/>
+            <line x1="37" y1="63" x2="46" y2="63" stroke="#2C1810" stroke-width="1.4"/>
+            <!-- Screw 2 (right, angled other way) -->
+            <line x1="62" y1="22" x2="38" y2="62" stroke="#2C1810" stroke-width="3"/>
+            <!-- Screw 2 head -->
+            <circle cx="62" cy="22" r="8" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.6"/>
+            <line x1="57" y1="19" x2="67" y2="19" stroke="#2C1810" stroke-width="1.4"/>
+            <line x1="57" y1="25" x2="67" y2="25" stroke="#2C1810" stroke-width="1.4"/>
+            <!-- Screw 2 tip -->
+            <line x1="41" y1="57" x2="35" y2="67" stroke="#2C1810" stroke-width="2"/>
+            <line x1="34" y1="63" x2="43" y2="63" stroke="#2C1810" stroke-width="1.4"/>
+            <!-- Hex nut in center -->
+            <polygon points="40,35 46,38 46,44 40,47 34,44 34,38" fill="#C8973F" stroke="#2C1810" stroke-width="1.4"/>
+            <circle cx="40" cy="41" r="3" fill="white" stroke="#2C1810" stroke-width="1.2"/>
+          </svg>
+        </span>
+        <h3>Hardware & Material Selection</h3>
+        <p>Choose from an extensive range of cabinet hardware, finishes, and materials. We source premium options across multiple price tiers to match both your aesthetic vision and budget requirements.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Ground line -->
+            <line x1="6" y1="72" x2="74" y2="72"/>
+            <!-- Building left (shorter) -->
+            <rect x="8" y="44" width="18" height="28" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.6"/>
+            <rect x="12" y="49" width="5" height="6" fill="#C8973F" stroke="none"/>
+            <rect x="19" y="49" width="5" height="6" fill="#C8973F" stroke="none"/>
+            <rect x="12" y="59" width="5" height="6" fill="#C8973F" stroke="none"/>
+            <rect x="19" y="59" width="5" height="6" fill="#C8973F" stroke="none"/>
+            <!-- Building center (taller) -->
+            <rect x="30" y="26" width="20" height="46" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.6"/>
+            <rect x="34" y="32" width="5" height="6" fill="#C8973F" stroke="none"/>
+            <rect x="41" y="32" width="5" height="6" fill="#C8973F" stroke="none"/>
+            <rect x="34" y="44" width="5" height="6" fill="#C8973F" stroke="none"/>
+            <rect x="41" y="44" width="5" height="6" fill="#C8973F" stroke="none"/>
+            <rect x="34" y="56" width="12" height="16" fill="white" stroke="#2C1810" stroke-width="1.2"/>
+            <!-- Upward trend arrow top right -->
+            <polyline points="52,60 60,48 68,54 75,38" stroke="#C8973F" stroke-width="2.2" fill="none"/>
+            <polyline points="71,36 75,38 73,42" stroke="#C8973F" stroke-width="2.2" fill="none"/>
+          </svg>
+        </span>
+        <h3>Investment Property Packages</h3>
+        <p>Real estate investors benefit from our portfolio-focused renovation approach — rapid turnarounds, cost-efficient material selections, and ROI-maximizing design choices that appeal to today's buyers and renters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="process">
+  <div class="section-inner">
+    <span class="eyebrow">The Process</span>
+    <h2>How It Works</h2>
+    <div class="divider"></div>
+    <p style="max-width:580px;">A streamlined, four-step journey from imagination to installation.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Share Your Space</h3>
+        <p>Send us photos of your current kitchen. Our team reviews your existing layout, cabinet structure, and overall space to understand your starting point.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Design Consultation</h3>
+        <p>We discuss your preferred styles, materials, colors, and hardware preferences. Our specialists guide you through options that suit your taste and goals.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Virtual Visualization</h3>
+        <p>Mile High AI Labs renders photorealistic images of your new kitchen. Review and refine your design until it's exactly what you envisioned — before spending a dollar on materials.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Proposal &amp; Build</h3>
+        <p>You receive a detailed price proposal aligned with your approved design. Once confirmed, our team handles the full renovation from start to stunning finish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-bg" id="gallery">
+  <div class="section-inner">
+    <span class="eyebrow">Transformation Gallery</span>
+    <h2>Before &amp; After</h2>
+    <div class="divider"></div>
+    <p>Click the tabs to toggle between before and after on each transformation. Every project below was visualized virtually before the first nail was driven.</p>
+
+    <div class="gallery-grid">
+
+      <!-- Pair 1 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/1.JPG" alt="Before - Original brown cabinets"/>
+          <img class="img-after"  src="after/(1).png" alt="After - White high-gloss cabinets"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Classic Brown → Modern White High-Gloss</div>
+          <div class="pair-desc">Silver bar handles · High-gloss finish · Contemporary style</div>
+        </div>
+      </div>
+
+      <!-- Pair 2 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/2.png" alt="Before - Gray charcoal cabinets"/>
+          <img class="img-after"  src="after/(2).png" alt="After - White shaker cabinets with gold hardware"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Charcoal Gray → Bright White Shaker</div>
+          <div class="pair-desc">Gold pull handles · Shaker door profile · Quartz countertops</div>
+        </div>
+      </div>
+
+      <!-- Pair 3 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/3.png" alt="Before - Warm brown wood kitchen"/>
+          <img class="img-after"  src="after/(3).png" alt="After - Bright white open kitchen"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Warm Oak → Crisp White Open Kitchen</div>
+          <div class="pair-desc">Black hardware · Open shelving accents · Full kitchen transformation</div>
+        </div>
+      </div>
+
+      <!-- Pair 4 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/4.png" alt="Before - Open concept bright kitchen"/>
+          <img class="img-after"  src="after/(4).png" alt="After - White with gold hardware open concept"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Bright Open Kitchen → Elevated White &amp; Gold</div>
+          <div class="pair-desc">Gold cabinet hardware · Marble backsplash · Open concept layout</div>
+        </div>
+      </div>
+
+      <!-- Pair 5 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/5.jpg" alt="Before - Natural oak cabinets"/>
+          <img class="img-after"  src="after/(5).png" alt="After - White/cream with gold knobs elegant"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Natural Oak → Elegant Cream &amp; Gold</div>
+          <div class="pair-desc">Gold round knobs · Marble countertops · Luxury finish</div>
+        </div>
+      </div>
+
+      <!-- Pair 6 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/6.png" alt="Before renovation style 6"/>
+          <img class="img-after"  src="after/(6).png" alt="After renovation style 6"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Dated Cabinetry → Fresh Modern Finish</div>
+          <div class="pair-desc">Updated hardware · New door profiles · Complete restyling</div>
+        </div>
+      </div>
+
+      <!-- Pair 7 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/7.jpg" alt="Before renovation style 7"/>
+          <img class="img-after"  src="after/(7).png" alt="After renovation style 7"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Traditional Style → Contemporary Upgrade</div>
+          <div class="pair-desc">Brushed nickel hardware · Clean panel doors · Bright finish</div>
+        </div>
+      </div>
+
+      <!-- Pair 8 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/8.png" alt="Before renovation style 8"/>
+          <img class="img-after"  src="after/(8).png" alt="After renovation style 8"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Worn Finish → Refreshed &amp; Refined</div>
+          <div class="pair-desc">Matte hardware · Two-tone color option · Improved storage</div>
+        </div>
+      </div>
+
+      <!-- Pair 9 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/9.jpg" alt="Before renovation style 9"/>
+          <img class="img-after"  src="after/(9).png" alt="After renovation style 9"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Builder-Grade → Custom Elevated Look</div>
+          <div class="pair-desc">Statement hardware · Premium material upgrade · Designer aesthetic</div>
+        </div>
+      </div>
+
+      <!-- Pair 10 -->
+      <div class="gallery-pair">
+        <div class="pair-images">
+          <img class="img-before" src="before/10.png" alt="Before renovation style 10"/>
+          <img class="img-after"  src="after/(10).png" alt="After renovation style 10"/>
+        
+          <div class="slider-divider">
+            <div class="slider-handle">
+              <div class="slider-arrows">&#9664;&#9654;</div>
+            </div>
+          </div>
+          <span class="slider-label before">Before</span>
+          <span class="slider-label after">After</span>
+        </div>
+        <div class="pair-info">
+          <div class="pair-title">Outdated Kitchen → Showroom-Ready</div>
+          <div class="pair-desc">Mixed metal accents · Custom panel inserts · Full transformation</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="section-inner">
+    <span class="eyebrow">Why Choose Us</span>
+    <h2>The Abodable Advantage</h2>
+    <div class="divider"></div>
+    <p style="max-width:600px;">We combine the latest AI visualization technology with expert craftsmanship to deliver a renovation experience unlike any other.</p>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Eye outer shape -->
+            <path d="M8,40 C16,22 64,22 72,40 C64,58 16,58 8,40 Z" fill="#F5EDD8" stroke="#2C1810"/>
+            <!-- Iris circle -->
+            <circle cx="40" cy="40" r="13" fill="white" stroke="#2C1810" stroke-width="1.8"/>
+            <!-- Clock face inside iris -->
+            <circle cx="40" cy="40" r="9" fill="white" stroke="#2C1810" stroke-width="1.4"/>
+            <!-- Clock hands -->
+            <line x1="40" y1="40" x2="40" y2="33" stroke="#C8973F" stroke-width="1.8"/>
+            <line x1="40" y1="40" x2="45" y2="43" stroke="#C8973F" stroke-width="1.8"/>
+            <!-- Clock tick marks -->
+            <line x1="40" y1="31.5" x2="40" y2="33" stroke="#2C1810" stroke-width="1.3"/>
+            <line x1="40" y1="47" x2="40" y2="48.5" stroke="#2C1810" stroke-width="1.3"/>
+            <line x1="31.5" y1="40" x2="33" y2="40" stroke="#2C1810" stroke-width="1.3"/>
+            <line x1="47" y1="40" x2="48.5" y2="40" stroke="#2C1810" stroke-width="1.3"/>
+          </svg>
+        </div>
+        <div class="benefit-text">
+          <h3>See It Before You Build It</h3>
+          <p>Our AI-powered virtual renders eliminate all guesswork. You approve the design before a single cabinet is touched, ensuring complete satisfaction with the final result.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Lightbulb globe -->
+            <path d="M40,10 C26,10 16,20 16,33 C16,42 21,49 29,53 L29,60 L51,60 L51,53 C59,49 64,42 64,33 C64,20 54,10 40,10 Z" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.8"/>
+            <!-- Base bands -->
+            <line x1="29" y1="60" x2="51" y2="60" stroke="#2C1810" stroke-width="1.8"/>
+            <line x1="31" y1="65" x2="49" y2="65" stroke="#2C1810" stroke-width="1.8"/>
+            <!-- Tip -->
+            <path d="M34,65 Q40,72 46,65" stroke="#2C1810" stroke-width="1.8" fill="none"/>
+            <!-- House inside bulb -->
+            <polyline points="40,22 48,30 48,42 32,42 32,30 40,22" stroke="#C8973F" stroke-width="1.6" fill="none"/>
+            <line x1="32" y1="30" x2="48" y2="30" stroke="#C8973F" stroke-width="1.3"/>
+            <!-- Door -->
+            <rect x="37" y="35" width="6" height="7" stroke="#C8973F" stroke-width="1.3" fill="none"/>
+          </svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Unlimited Style Options</h3>
+          <p>Explore dozens of cabinet styles, finishes, and hardware combinations virtually. Mix and match to find the perfect look for your space without any commitment until you're ready.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Axes -->
+            <line x1="14" y1="10" x2="14" y2="65"/>
+            <line x1="14" y1="65" x2="70" y2="65"/>
+            <!-- Bar 1 (short) -->
+            <rect x="20" y="48" width="10" height="17" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.6"/>
+            <!-- Bar 2 (medium) -->
+            <rect x="34" y="36" width="10" height="29" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.6"/>
+            <!-- Bar 3 (tall) -->
+            <rect x="48" y="22" width="10" height="43" fill="#C8973F" stroke="#2C1810" stroke-width="1.6" fill-opacity="0.6"/>
+            <!-- $ symbol top right -->
+            <text x="66" y="20" text-anchor="middle" font-size="18" fill="#C8973F" stroke="none" font-family="Georgia" font-weight="bold">$</text>
+            <!-- Tick marks on y-axis -->
+            <line x1="11" y1="48" x2="14" y2="48" stroke="#2C1810" stroke-width="1.4"/>
+            <line x1="11" y1="36" x2="14" y2="36" stroke="#2C1810" stroke-width="1.4"/>
+            <line x1="11" y1="22" x2="14" y2="22" stroke="#2C1810" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Transparent Pricing</h3>
+          <p>Our detailed proposals break down every cost — materials, hardware, labor, and installation. No hidden fees, no surprises, and no pressure until you're fully confident.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- City building left -->
+            <rect x="8" y="34" width="14" height="38" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.6"/>
+            <rect x="11" y="38" width="4" height="5" stroke="#C8973F" stroke-width="1.2" fill="none"/>
+            <rect x="17" y="38" width="4" height="5" stroke="#C8973F" stroke-width="1.2" fill="none"/>
+            <rect x="11" y="48" width="4" height="5" stroke="#C8973F" stroke-width="1.2" fill="none"/>
+            <rect x="17" y="48" width="4" height="5" stroke="#C8973F" stroke-width="1.2" fill="none"/>
+            <!-- City building right -->
+            <rect x="58" y="28" width="14" height="44" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.6"/>
+            <rect x="61" y="32" width="4" height="5" stroke="#C8973F" stroke-width="1.2" fill="none"/>
+            <rect x="67" y="32" width="4" height="5" stroke="#C8973F" stroke-width="1.2" fill="none"/>
+            <rect x="61" y="42" width="4" height="5" stroke="#C8973F" stroke-width="1.2" fill="none"/>
+            <rect x="67" y="42" width="4" height="5" stroke="#C8973F" stroke-width="1.2" fill="none"/>
+            <!-- House in foreground -->
+            <polygon points="40,18 60,36 20,36" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.8"/>
+            <rect x="24" y="36" width="32" height="36" fill="white" stroke="#2C1810" stroke-width="1.8"/>
+            <!-- Door -->
+            <rect x="35" y="52" width="10" height="20" fill="white" stroke="#2C1810" stroke-width="1.5"/>
+            <!-- Windows -->
+            <rect x="27" y="42" width="8" height="7" stroke="#C8973F" stroke-width="1.4" fill="none"/>
+            <rect x="45" y="42" width="8" height="7" stroke="#C8973F" stroke-width="1.4" fill="none"/>
+            <!-- Ground line -->
+            <line x1="5" y1="72" x2="75" y2="72"/>
+          </svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Built for Homeowners &amp; Investors</h3>
+          <p>Whether you're creating your forever home kitchen or maximizing rental or resale value, our renovation packages are tailored to your specific goals and budget.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Lightning bolt left -->
+            <path d="M28,10 L18,38 L27,38 L20,70 L38,34 L28,34 Z" fill="#F5EDD8" stroke="#2C1810" stroke-width="1.8" stroke-linejoin="round"/>
+            <!-- Lightning bolt right (smaller, offset) -->
+            <path d="M50,18 L42,42 L49,42 L44,62 L58,40 L50,40 Z" fill="#C8973F" stroke="#2C1810" stroke-width="1.6" stroke-linejoin="round" fill-opacity="0.7"/>
+            <!-- Speed lines -->
+            <line x1="60" y1="24" x2="72" y2="24" stroke="#C8973F" stroke-width="1.6"/>
+            <line x1="62" y1="32" x2="72" y2="32" stroke="#C8973F" stroke-width="1.6"/>
+            <line x1="64" y1="40" x2="72" y2="40" stroke="#C8973F" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <div class="benefit-text">
+          <h3>Fast Turnaround</h3>
+          <p>Our streamlined process — from virtual design approval to completed installation — is engineered to minimize disruption to your daily life or your investment timeline.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#2C1810" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Left arm / hand -->
+            <path d="M8,44 C8,44 12,36 18,34 C22,33 26,35 28,37 L36,43" fill="none" stroke="#2C1810"/>
+            <!-- Left fingers -->
+            <path d="M28,37 C30,33 34,32 36,34 L40,40" fill="none" stroke="#2C1810"/>
+            <path d="M32,34 C34,30 38,30 39,32 L42,38" fill="none" stroke="#2C1810"/>
+            <path d="M36,33 C38,29 42,30 42,33 L43,38" fill="none" stroke="#2C1810"/>
+            <!-- Right arm / hand -->
+            <path d="M72,44 C72,44 68,36 62,34 C58,33 54,35 52,37 L44,43" fill="none" stroke="#2C1810"/>
+            <!-- Right fingers -->
+            <path d="M52,37 C50,33 46,32 44,34 L40,40" fill="none" stroke="#2C1810"/>
+            <path d="M48,34 C46,30 42,30 41,32 L38,38" fill="none" stroke="#2C1810"/>
+            <path d="M44,33 C42,29 38,30 38,33 L37,38" fill="none" stroke="#2C1810"/>
+            <!-- Clasped area highlight -->
+            <ellipse cx="40" cy="41" rx="8" ry="6" fill="#F5EDD8" stroke="#C8973F" stroke-width="1.4"/>
+            <!-- Cuffs / sleeves -->
+            <path d="M8,44 C6,50 8,56 12,58 L22,56" fill="#F5EDD8" stroke="#2C1810"/>
+            <path d="M72,44 C74,50 72,56 68,58 L58,56" fill="#F5EDD8" stroke="#2C1810"/>
+          </svg>
+        </div>
+        <div class="benefit-text">
+          <h3>End-to-End Service</h3>
+          <p>From initial consultation and virtual design to material sourcing, installation, and final walkthrough, Abodable Renovations manages every step of your project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band" id="contact">
+  <span class="eyebrow">Let's Get Started</span>
+  <h2>Ready to Reimagine<br/>Your Kitchen?</h2>
+  <p>Schedule a free consultation today. We'll review your space and show you what's possible before you commit to a single dollar of renovation spend.</p>
+  <div class="cta-contacts" style="justify-content:center; gap:64px;">
+    <div class="cta-contact" style="text-align:center;">
+      <div class="cta-contact-label">Phone</div>
+      <div class="cta-contact-value" style="font-family:'Lato',sans-serif; font-size:17px; color:#FFFFFF; font-weight:700; letter-spacing:0.04em; font-variant-numeric:lining-nums; font-feature-settings:'lnum' 1;">+1 (303) 578 2580</div>
+    </div>
+    <div class="cta-contact" style="text-align:center;">
+      <div class="cta-contact-label">Email</div>
+      <div class="cta-contact-value" style="font-family:'Playfair Display',serif; font-size:17px; color:#FFFFFF; font-weight:400; letter-spacing:normal; text-transform:none;">services@milehighlabs.ai</div>
+    </div>
+  </div>
+  <a href="https://cal.com/milehighailabs/15min" target="_blank" class="cta-btn">Request Free Consultation</a>
+</div>
+
+<!-- SPACER for download bar -->
+<div style="height:62px;"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Abodable Renovations</div>
+  <div class="footer-copy">© 2025 Abodable Renovations. All rights reserved.</div>
+  <div class="footer-partner">
+    Virtual Design Technology by <a href="https://www.milehighlabs.ai/" target="_blank">Mile High AI Labs</a>
+  </div>
+</footer>
+
+<script>
+  // ── BEFORE/AFTER DRAG SLIDER ─────────────────────────────────────────────
+  document.querySelectorAll('.pair-images').forEach(container => {
+    const beforeImg = container.querySelector('.img-before');
+    const divider   = container.querySelector('.slider-divider');
+    let dragging    = false;
+
+    function setSlider(clientX) {
+      const rect = container.getBoundingClientRect();
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(2, Math.min(98, pct));
+      beforeImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      divider.style.left = pct + '%';
+    }
+
+    // Mouse events
+    container.addEventListener('mousedown', e => {
+      dragging = true;
+      setSlider(e.clientX);
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', e => {
+      if (dragging) setSlider(e.clientX);
+    });
+    window.addEventListener('mouseup', () => { dragging = false; });
+
+    // Touch events
+    container.addEventListener('touchstart', e => {
+      dragging = true;
+      setSlider(e.touches[0].clientX);
+    }, { passive: true });
+    window.addEventListener('touchmove', e => {
+      if (dragging) setSlider(e.touches[0].clientX);
+    }, { passive: true });
+    window.addEventListener('touchend', () => { dragging = false; });
+  });
+</script>
+
+</body>
+</html>

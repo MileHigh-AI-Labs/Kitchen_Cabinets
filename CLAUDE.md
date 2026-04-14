@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Abodable Renovations — Kitchen Cabinet Proposal** is a single-page static HTML proposal/marketing site for Abodable Renovations, a kitchen cabinet renovation company that uses AI-powered virtual design (powered by Mile High AI Labs) to show clients photorealistic renders of their renovated kitchen before any physical work begins.
+**Abodeable Renovations — Kitchen Cabinet Proposal** is a single-page static HTML proposal/marketing site for Abodeable Renovations, a kitchen cabinet renovation company that uses AI-powered virtual design (powered by Mile High AI Labs) to show clients photorealistic renders of their renovated kitchen before any physical work begins.
 
 The site is a self-contained sales/proposal page intended to be viewed in a browser or shared with prospective clients (homeowners and real estate investors).
 
@@ -19,7 +19,7 @@ The site is a self-contained sales/proposal page intended to be viewed in a brow
 
 ```
 Kitchen_Cabinets/
-├── Abodable_Renovations_Proposal.html  # Main proposal page (single file: HTML + CSS + JS)
+├── Abodeable_Renovations_Proposal.html  # Main proposal page (single file: HTML + CSS + JS)
 ├── quote.html                           # Standalone scope-driven "Build Your Quote" form page (same design system)
 ├── Dimensions_materials.md              # Reference-only: scope-by-scope component counts & dimensions spec (basis for quote.html logic)
 ├── hero image.png                       # Hero background
@@ -38,7 +38,7 @@ The PDFs at the repo root (`EST0004.pdf`, `material costing.pdf`, `cabinets new 
 
 ## Page Sections (in order)
 
-1. **Header** — Fixed nav with logo "Abodable Renovations", section links, and gold "Free Consultation" CTA
+1. **Header** — Fixed nav with logo "Abodeable Renovations", section links, and gold "Free Consultation" CTA
 2. **Hero** — Full-viewport hero with `hero image.png` background and headline "Imagine Your Dream Kitchen Before We Build It"
 3. **About** (`#about`) — Two-column intro with `about us.png`
 4. **Partnership Band** — Dark band promoting Mile High AI Labs as virtual design partner (links to milehighlabs.ai)
@@ -77,15 +77,15 @@ When adding new gallery pairs, follow the existing markup structure (`.gallery-p
 
 ## Editing Notes
 
-- The main proposal site is **one file** — HTML, CSS, and JS all live in `Abodable_Renovations_Proposal.html`. There is no bundler, no preprocessor, no `npm` step. `quote.html` is a separate self-contained scope-driven quote builder (user picks a renovation scope, form reveals the relevant component count/dimension inputs derived from `Dimensions_materials.md`) that reuses the same `:root` CSS variables and Playfair/Lato typography — when updating brand colors or fonts, update both files. When changing quote form fields or scope logic, cross-check against `Dimensions_materials.md` so the two stay in sync.
-- To preview, just open the file in a browser (double-click, or `start Abodable_Renovations_Proposal.html` in CMD / `explorer Abodable_Renovations_Proposal.html` in Git Bash).
+- The main proposal site is **one file** — HTML, CSS, and JS all live in `Abodeable_Renovations_Proposal.html`. There is no bundler, no preprocessor, no `npm` step. `quote.html` is a separate self-contained scope-driven quote builder (user picks a renovation scope, form reveals the relevant component count/dimension inputs derived from `Dimensions_materials.md`) that reuses the same `:root` CSS variables and Playfair/Lato typography — when updating brand colors or fonts, update both files. When changing quote form fields or scope logic, cross-check against `Dimensions_materials.md` so the two stay in sync.
+- To preview, just open the file in a browser (double-click, or `start Abodeable_Renovations_Proposal.html` in CMD / `explorer Abodeable_Renovations_Proposal.html` in Git Bash).
 - All images are loaded with **relative paths** from the HTML file's directory — keep the `before/`, `after/`, and root image files alongside the HTML.
 - SVG icons inside service/benefit cards are inline — color them via `stroke="#2C1810"` (brown) and `#C8973F` (gold) to stay on-brand.
 - When changing colors site-wide, prefer updating the CSS variables in `:root` rather than hunting hex codes throughout the file.
 
 ## Company / Contact (used in CTA + footer)
 
-- **Company**: Abodable Renovations
+- **Company**: Abodeable Renovations
 - **Tech partner**: Mile High AI Labs — https://www.milehighlabs.ai/
 - **Phone**: +1 (303) 578 2580
 - **Email**: services@milehighlabs.ai

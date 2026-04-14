@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/Abodable_Renovations_Proposal.html" },
-    { "source": "/quote", "destination": "/quote.html" }
+    { "source": "/", "destination": "/Abodable_Renovations_Proposal" },
+    { "source": "/quote", "destination": "/quote" }
   ]
 }

@@ -20,7 +20,8 @@ The site is a self-contained sales/proposal page intended to be viewed in a brow
 ```
 Kitchen_Cabinets/
 ├── Abodable_Renovations_Proposal.html  # Main proposal page (single file: HTML + CSS + JS)
-├── quote.html                           # Standalone "Build Your Quote" form page (same design system)
+├── quote.html                           # Standalone scope-driven "Build Your Quote" form page (same design system)
+├── Dimensions_materials.md              # Reference-only: scope-by-scope component counts & dimensions spec (basis for quote.html logic)
 ├── hero image.png                       # Hero background
 ├── about us.png                         # About section image
 ├── before/                              # Before renovation photos (1.JPG, 2.png ... 10.png)
@@ -76,8 +77,8 @@ When adding new gallery pairs, follow the existing markup structure (`.gallery-p
 
 ## Editing Notes
 
-- The main proposal site is **one file** — HTML, CSS, and JS all live in `Abodable_Renovations_Proposal.html`. There is no bundler, no preprocessor, no `npm` step. `quote.html` is a separate self-contained page (form-based quote builder) that reuses the same `:root` CSS variables and Playfair/Lato typography — when updating brand colors or fonts, update both files.
-- To preview, just open the file in a browser (double-click or `start Abodable_Renovations_Proposal.html` / `start quote.html` on Windows).
+- The main proposal site is **one file** — HTML, CSS, and JS all live in `Abodable_Renovations_Proposal.html`. There is no bundler, no preprocessor, no `npm` step. `quote.html` is a separate self-contained scope-driven quote builder (user picks a renovation scope, form reveals the relevant component count/dimension inputs derived from `Dimensions_materials.md`) that reuses the same `:root` CSS variables and Playfair/Lato typography — when updating brand colors or fonts, update both files. When changing quote form fields or scope logic, cross-check against `Dimensions_materials.md` so the two stay in sync.
+- To preview, just open the file in a browser (double-click, or `start Abodable_Renovations_Proposal.html` in CMD / `explorer Abodable_Renovations_Proposal.html` in Git Bash).
 - All images are loaded with **relative paths** from the HTML file's directory — keep the `before/`, `after/`, and root image files alongside the HTML.
 - SVG icons inside service/benefit cards are inline — color them via `stroke="#2C1810"` (brown) and `#C8973F` (gold) to stay on-brand.
 - When changing colors site-wide, prefer updating the CSS variables in `:root` rather than hunting hex codes throughout the file.
